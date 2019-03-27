@@ -1,1 +1,4 @@
-//dont use this.... use main.js
+$(document).ready(function () {
+
+
+});

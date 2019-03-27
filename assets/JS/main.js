@@ -1,4 +1,4 @@
-
+$(document).ready(function () {
 $('.btn-primary').on('click', function (event) {
   event.preventDefault();
     var searchWord = $('#search-input').val().trim()
@@ -8,6 +8,21 @@ $.ajax({
    method: "GET"
  }).then(function (response){
    console.log(response)
+   var results = response.response.docs;
+   console.log(results);
+  let i=0;
+   results.forEach(function(result){
+     var newdivs = $('<div>');
+     newdivs.attr("id", "article-number2"+result)
+     i++;
+   });
+  
+  //  for (let i=0; i < results.length; i++) {
+  //    newdivs.attr("Id", i)
+  //  }
+
+   $('#search-input').get(0).reset()
    
  });
+})
 })
